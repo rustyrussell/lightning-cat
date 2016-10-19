@@ -21,7 +21,7 @@ case "$QUERY_STRING" in
 	echo "<H1> Lightning Cat Picture Server </h1>"
 	echo "Send payment of $MSATOSHI millisatoshi to $ID, receipt $RHASH"
 	echo "eg:"
-	echo '<pre>lightning-cli sendpay $(lightning-cli getroute '$ID $MSATOSHI" 1 | sed 's/^{ \"route\" : \(.*\) }$/\1/') $RHASH</pre>"
+	echo "<pre>contrib/lightning-pay $ID $MSATOSHI $RHASH</pre>"
 	echo
 	echo 'Then <a href="?'$LABEL'">click here</a>'
 	;;
