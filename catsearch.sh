@@ -12,6 +12,23 @@ ID=`$LCLI getinfo | sed 's/.*"id" : "\([^"]*\)".*/\1/'`
 echo 'Content-type: text/html'
 echo ''
 
+if [ x"$ID" = x"" ]; then
+    echo '<head><title>Lightning Cat Picture Service is DOWN</title></head>'
+    echo '<body>'
+    echo '<pre>'
+    cat <<EOF
+                 /\\__
+        .--.----'  X \\
+       /    )    \\___/
+      |  '------.___)
+jgs    \`---------\`
+( Credit http://www.oocities.org/spunk1111/small.htm )
+EOF
+    echo '</pre>'
+    echo '</body>'
+    exit 0
+fi
+
 echo '<head><title>Lightning Cat Picture Service</title></head>'
 echo '<body>'
 case "$QUERY_STRING" in
